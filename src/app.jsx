@@ -5,7 +5,19 @@ import SearchHeader from './components/search_header/search_header'
 
 function App() {
   const [videos, setVidoes] = useState([]);
-  const [search, setSearch] = useState([]);
+  const search = query => {
+
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyAq_qzMHEBT1F-zo-dPxI-5rIJ0tRrss6s`, requestOptions)
+      .then(response => response.json())
+      .then(result => setVidoes(result.items))
+      .catch(error => console.log('error', error));
+
+  }
 
   useEffect(()=> {
     const requestOptions = {
@@ -23,7 +35,7 @@ function App() {
   
   return (
     <div className={styles.app}>
-      <SearchHeader search={search} />
+      <SearchHeader onSearch={search} />
       <VideoList videos={videos} />;
     </div>  
   )
