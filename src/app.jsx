@@ -12,9 +12,12 @@ function App() {
       redirect: 'follow'
     };
 
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyAq_qzMHEBT1F-zo-dPxI-5rIJ0tRrss6s`, requestOptions)
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyAq_qzMHEBT1F-zo-dPxI-5rIJ0tRrss6s`, requestOptions)
       .then(response => response.json())
-      .then(result => setVidoes(result.items))
+      .then(result =>
+          result.items.map(item => ({...item, id: item.id.videoId}))
+        )
+      .then(items => setVidoes(items))
       .catch(error => console.log('error', error));
 
   }
