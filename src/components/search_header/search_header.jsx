@@ -27,7 +27,6 @@ const SearchHeader = ({onSearch}) => {
             <button className={styles.button} type="submit" onClick={onClick}>
                 <img className={styles.buttonImg} src="/images/search.png" alt="search"/>
             </button>
-
         </header>
     )
     };
