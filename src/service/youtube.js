@@ -1,6 +1,6 @@
 class Youtube {
     constructor(key) {
-        this.key = key;
+        this.key = key ;
         this.getrequestOptions = {
             method: 'GET',
             redirect: 'follow'
