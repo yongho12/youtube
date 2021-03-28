@@ -9,7 +9,7 @@ class Youtube {
 
     mostPopular() {
         return fetch(
-            "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAq_qzMHEBT1F-zo-dPxI-5rIJ0tRrss6s", 
+            `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`, 
             this.getrequestOptions
             )
             .then(response => response.json())
