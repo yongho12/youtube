@@ -32,12 +32,12 @@ function App({youtube}) {
     <div className={styles.app}>
       <SearchHeader onSearch={search} />
       <section className={styles.content}>
-        <div className={styles.detail}>
+        {/* <div className={styles.detail}>
           {selectedVideo && <VideoDetail video={selectedVideo} /> }
         </div>
         <div className={styles.list}>
           <VideoList videos={videos} onVideoClick={selectVideo}/>
-        </div>
+        </div> */}
       </section>
     </div>  
   )
