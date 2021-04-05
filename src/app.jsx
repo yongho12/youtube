@@ -15,7 +15,10 @@ function App({youtube}) {
   const search = query => {
     youtube
     .search(query)
-    .then(vidoes => setVideos(videos))
+    .then(vidoes => {
+      setVideos(videos);
+      setSelectedVideo(null);
+    })
   
   }
 
