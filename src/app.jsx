@@ -12,15 +12,15 @@ function App({youtube}) {
     setSelectedVideo(video)
   }
 
-  const search = query => {
-    youtube
-    .search(query)
-    .then(vidoes => {
-      setVideos(videos);
-      setSelectedVideo(null);
-    })
+  // const search = query => {
+  //   youtube
+  //   .search(query)
+  //   .then(videos => {
+  //     setVideos(videos);
+  //     setSelectedVideo(null);
+  //   })
   
-  }
+  // }
 
   useEffect(()=> {
     youtube
@@ -35,11 +35,11 @@ function App({youtube}) {
     <div className={styles.app}>
       <SearchHeader onSearch={search} />
       <section className={styles.content}>
-        {selectedVideo &&
-        <div className={styles.detail}>
-           <VideoDetail video={selectedVideo} /> 
-        </div>
-        }
+        {selectedVideo && (
+          <div className={styles.detail}>
+            <VideoDetail video={selectedVideo} /> 
+          </div>
+        )}
         <div className={styles.list}>
           <VideoList videos={videos} onVideoClick={selectVideo} display= {selectedVideo? 'list':'grid'}/>
         </div>
