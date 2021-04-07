@@ -12,15 +12,15 @@ function App({youtube}) {
     setSelectedVideo(video)
   }
 
-  // const search = query => {
-  //   youtube
-  //   .search(query)
-  //   .then(videos => {
-  //     setVideos(videos);
-  //     setSelectedVideo(null);
-  //   })
+  const search = query => {
+    youtube
+    .search(query)
+    .then(videos => {
+      setVideos(videos);
+      setSelectedVideo(null);
+    })
   
-  // }
+  }
 
   useEffect(()=> {
     youtube
