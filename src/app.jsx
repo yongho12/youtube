@@ -26,9 +26,8 @@ function App({youtube}) {
     youtube
     .mostPopular()
     .then(videos => setVideos(videos))
-  },[]);
+  },[] );
 
-  
 
   
   return (
