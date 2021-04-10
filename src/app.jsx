@@ -17,7 +17,7 @@ function App({youtube}) {
     .search(query)
     .then(videos => {
       setVideos(videos);
-      setSelectedVideo(null);
+      // setSelectedVideo(null);
     })
   
   }
